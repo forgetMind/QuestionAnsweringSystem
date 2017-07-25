@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
  * 在控制台输入问题 然后从google搜索证据 然后计算候选答案
  *
  * @author 杨尚川
- */
+ */ 
 public class ConsoleDemo {
 
     private static final Logger LOG = LoggerFactory.getLogger(ConsoleDemo.class);

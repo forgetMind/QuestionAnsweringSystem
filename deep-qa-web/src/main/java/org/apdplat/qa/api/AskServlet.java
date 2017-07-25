@@ -24,16 +24,19 @@ import edu.stanford.nlp.util.StringUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apdplat.qa.SharedQuestionAnsweringSystem;
 import org.apdplat.qa.model.CandidateAnswer;
 import org.apdplat.qa.model.Question;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 /**
  * Json over HTTP 接口

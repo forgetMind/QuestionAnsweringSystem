@@ -225,9 +225,14 @@ public class QuestionAnsweringSystemImpl implements QuestionAnsweringSystem {
             LOG.info("************************************");
             LOG.info("Question " + question.getQuestion());
             LOG.info("Question 候选答案：");
+            //更改现有输出问题逻辑，输出答案所在的全部回答
+          //输出答案所在的全部回答
             for (CandidateAnswer candidateAnswer : question.getAllCandidateAnswer()) {
-                LOG.info(candidateAnswer.getAnswer() + "  " + candidateAnswer.getScore());
+                LOG.info("答案：" + candidateAnswer.getAnswer() + "-----完整答案：" + candidateAnswer.getCompleteAnswer() + "-----答案评分：" + candidateAnswer.getScore());
             }
+            
+
+            
             int rank = question.getExpectAnswerRank();
             LOG.info("ExpectAnswerRank: " + rank);
             LOG.info("");

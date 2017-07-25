@@ -46,6 +46,7 @@ public class BaiduDemo {
         files.add(FilesConfig.organizationNameQuestions);
         files.add(FilesConfig.numberQuestions);
         files.add(FilesConfig.timeQuestions);
+        files.add(FilesConfig.definitionQuestions);
         DataSource dataSource = new BaiduDataSource(files);
 
         QuestionAnsweringSystem questionAnsweringSystem = new CommonQuestionAnsweringSystem();

@@ -63,7 +63,7 @@ public class BaiduDataSource implements DataSource {
     //使用摘要
     private static final boolean SUMMARY = true;
     //使用全文
-    //private static final boolean SUMMARY = false;
+//    private static final boolean SUMMARY = false;
     private final List<String> files = new ArrayList<>();
 
     public BaiduDataSource() {
@@ -247,6 +247,7 @@ public class BaiduDataSource implements DataSource {
                     LOG.debug("摘要为空");
                     continue;
                 }
+                //现在新增加获取问题所在的地址URL
                 Evidence evidence = new Evidence();
                 evidence.setTitle(title);
                 evidence.setSnippet(snippet);

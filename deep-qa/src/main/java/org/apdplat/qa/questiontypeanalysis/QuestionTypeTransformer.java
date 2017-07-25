@@ -58,6 +58,10 @@ public class QuestionTypeTransformer {
             return QuestionType.DEFINITIION;
         }
         */
+        //现在增加定义类型
+        if (questionType.contains("Definition")) {
+            return QuestionType.DEFINITIION;
+        }
         LOG.error("问题类型转换失败，默认人名：" + questionType);
         return QuestionType.PERSON_NAME;
     }

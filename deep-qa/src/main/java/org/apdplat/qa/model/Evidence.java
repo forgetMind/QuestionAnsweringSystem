@@ -33,7 +33,7 @@ import org.apdplat.word.segmentation.Word;
 public class Evidence {
 
     private String title;
-    private String snippet;
+    public String snippet;
     private double score = 1.0;
     private CandidateAnswerCollection candidateAnswerCollection;
 

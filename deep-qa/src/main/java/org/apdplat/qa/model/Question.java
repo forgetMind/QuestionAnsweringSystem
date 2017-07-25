@@ -45,7 +45,7 @@ public class Question {
 
     private static final Logger LOG = LoggerFactory.getLogger(Question.class);
     private String question;
-    private final List<Evidence> evidences = new ArrayList<>();
+    public final List<Evidence> evidences = new ArrayList<>();
 
     private QuestionType questionType = QuestionType.PERSON_NAME;
     private String expectAnswer;
@@ -135,6 +135,9 @@ public class Question {
      * @return 所有候选答案
      */
     public List<CandidateAnswer> getAllCandidateAnswer() {
+    	//组装候选答案
+    	//更改到此处
+        List<CandidateAnswer> candidateAnswers = new ArrayList<>();
         Map<String, Double> map = new HashMap<>();
         for (Evidence evidence : evidences) {
             for (CandidateAnswer candidateAnswer : evidence.getCandidateAnswerCollection().getAllCandidateAnswer()) {
@@ -147,10 +150,22 @@ public class Question {
                     score += candidateAnswerFinalScore;
                 }
                 map.put(candidateAnswer.getAnswer(), score);
+                
+                //作为统一处理，先更改到此处
+                String answer = candidateAnswer.getAnswer();
+                if (answer != null && score != null && score > 0 && score < Double.MAX_VALUE) {
+                    CandidateAnswer assembleCandidateAnswer = new CandidateAnswer();
+                    assembleCandidateAnswer.setAnswer(answer);
+                    assembleCandidateAnswer.setScore(score);
+                    //增加设置全部答案信息
+                    assembleCandidateAnswer.setCompleteAnswer(evidence.snippet);
+                    candidateAnswers.add(assembleCandidateAnswer);
+                }
             }
         }
 
-        //组装候选答案
+      //组装候选答案
+        /*
         List<CandidateAnswer> candidateAnswers = new ArrayList<>();
         for (Map.Entry<String, Double> entry : map.entrySet()) {
             String answer = entry.getKey();
@@ -162,8 +177,19 @@ public class Question {
                 candidateAnswers.add(candidateAnswer);
             }
         }
+        */
+        //排序
         Collections.sort(candidateAnswers);
         Collections.reverse(candidateAnswers);
+        
+        //将得到的完整答案也组装到完整的候选答案中
+        /*
+        for (Evidence evidence : evidences) {
+            LOG.info(evidence.snippet);
+            
+        }
+        */
+        
         //过滤候选答案
         if (candidateAnswerFilter != null) {
             candidateAnswerFilter.filter(this, candidateAnswers);

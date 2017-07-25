@@ -58,6 +58,8 @@ public class CommonCandidateAnswerSelect implements CandidateAnswerSelect {
             if(word.getPartOfSpeech().getPos().toLowerCase().startsWith(question.getQuestionType().getPos().toLowerCase())){
                 CandidateAnswer answer = new CandidateAnswer();
                 answer.setAnswer(word.getText());
+                //更改规则，增加候选答案的全部内容
+                answer.setCompleteAnswer(evidence.getSnippet());
                 candidateAnswerCollection.addAnswer(answer);
                 LOG.debug("成为候选答案："+word);
             }
@@ -66,6 +68,8 @@ public class CommonCandidateAnswerSelect implements CandidateAnswerSelect {
                 if(PersonName.is(word.getText())){
                     CandidateAnswer answer = new CandidateAnswer();
                     answer.setAnswer(word.getText());
+                  //更改规则，增加候选答案的全部内容
+                    answer.setCompleteAnswer(evidence.getSnippet());
                     candidateAnswerCollection.addAnswer(answer);
                     LOG.debug("成为候选答案："+word);
                 }

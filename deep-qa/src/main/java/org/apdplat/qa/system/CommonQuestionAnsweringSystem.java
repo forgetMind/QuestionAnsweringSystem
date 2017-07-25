@@ -71,6 +71,7 @@ public class CommonQuestionAnsweringSystem extends QuestionAnsweringSystemImpl {
         files.add(FilesConfig.organizationNameMaterial);
         files.add(FilesConfig.numberMaterial);
         files.add(FilesConfig.timeMaterial);
+        files.add(FilesConfig.definitionMaterial);
         DataSource dataSource = new FileDataSource(files);
 
         super.setDataSource(dataSource);

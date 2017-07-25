@@ -27,8 +27,12 @@ package org.apdplat.qa.model;
  */
 public class CandidateAnswer implements Comparable<CandidateAnswer> {
 
+	//简单的候选答案
     private String answer;
-    private double score = 1.0;
+    //候选答案的全部内容，
+    public  String completeAnswer;
+
+	private double score = 1.0;
 
     public String getAnswer() {
         return answer;
@@ -37,7 +41,15 @@ public class CandidateAnswer implements Comparable<CandidateAnswer> {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+    //候选答案的全部内容，
+    public String getCompleteAnswer() {
+		return completeAnswer;
+	}
 
+	public void setCompleteAnswer(String completeAnswer) {
+		this.completeAnswer = completeAnswer;
+	}
+	
     public double getScore() {
         return score;
     }
