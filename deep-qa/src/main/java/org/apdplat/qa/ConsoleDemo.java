@@ -23,6 +23,7 @@ package org.apdplat.qa;
 import org.apdplat.qa.datasource.BaiduDataSource;
 import org.apdplat.qa.datasource.ConsoleDataSource;
 import org.apdplat.qa.datasource.DataSource;
+import org.apdplat.qa.datasource.FileDataSource;
 import org.apdplat.qa.system.CommonQuestionAnsweringSystem;
 import org.apdplat.qa.system.QuestionAnsweringSystem;
 import org.slf4j.Logger;
@@ -42,6 +43,8 @@ public class ConsoleDemo {
         //DataSource dataSource = new GoogleDataSource();
         //Baidu数据源
         DataSource dataSource = new BaiduDataSource();
+      //FileData数据源
+//        DataSource dataSource = new FileDataSource();
         //控制台数据源
         dataSource = new ConsoleDataSource(dataSource);
         //问答系统

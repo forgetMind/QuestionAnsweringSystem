@@ -94,6 +94,7 @@ public class BaiduDataSource implements DataSource {
         for (String file : files) {
             BufferedReader reader = null;
             try {
+            	LOG.info("[[[[[[[[[file]]]]]]" +file);
                 reader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(file), "utf-8"));
                 String line = reader.readLine();
                 while (line != null) {

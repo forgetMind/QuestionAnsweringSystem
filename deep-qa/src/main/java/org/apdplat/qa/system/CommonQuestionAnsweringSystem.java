@@ -148,7 +148,6 @@ public class CommonQuestionAnsweringSystem extends QuestionAnsweringSystemImpl {
         PatternMatchResultSelector patternMatchResultSelector = new DefaultPatternMatchResultSelector();
         QuestionClassifier questionClassifier = new PatternBasedMultiLevelQuestionClassifier(patternMatchStrategy, patternMatchResultSelector);
         super.setQuestionClassifier(questionClassifier);
-
         LOG.info("问答系统构造完成");
     }
 

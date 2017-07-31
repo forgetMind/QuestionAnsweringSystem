@@ -55,7 +55,11 @@ public class FileDataSource implements DataSource {
         this.files.addAll(files);
     }
 
-    @Override
+    public FileDataSource() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
     public List<Question> getQuestions() {
         return getAndAnswerQuestions(null);
     }
