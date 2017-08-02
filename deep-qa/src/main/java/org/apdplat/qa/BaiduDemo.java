@@ -41,11 +41,11 @@ public class BaiduDemo {
      */
     public static void main(String[] args) {
         List<String> files = new ArrayList<>();
-//        files.add(FilesConfig.personNameQuestions);
-//        files.add(FilesConfig.locationNameQuestions);
-//        files.add(FilesConfig.organizationNameQuestions);
-//        files.add(FilesConfig.numberQuestions);
-//        files.add(FilesConfig.timeQuestions);
+        files.add(FilesConfig.personNameQuestions);
+        files.add(FilesConfig.locationNameQuestions);
+        files.add(FilesConfig.organizationNameQuestions);
+        files.add(FilesConfig.numberQuestions);
+        files.add(FilesConfig.timeQuestions);
         files.add(FilesConfig.definitionQuestions);
         DataSource dataSource = new BaiduDataSource(files);
 

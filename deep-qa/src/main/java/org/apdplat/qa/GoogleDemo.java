@@ -46,6 +46,7 @@ public class GoogleDemo {
         files.add(FilesConfig.organizationNameQuestions);
         files.add(FilesConfig.numberQuestions);
         files.add(FilesConfig.timeQuestions);
+        files.add(FilesConfig.definitionQuestions);
         DataSource dataSource = new GoogleDataSource(files);
 
         QuestionAnsweringSystem questionAnsweringSystem = new CommonQuestionAnsweringSystem();
